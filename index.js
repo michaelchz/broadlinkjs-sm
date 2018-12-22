@@ -564,7 +564,7 @@ device.prototype.a1 = function() {
     	var light       = payload[0x8];
     	var air_quality = payload[0x0a];
     	var noise       = payload[0xc];
-    	return  {temperature: temperature, light: light, air_quality: air_quality,  noise: noise};
+    	return  {temperature: temperature, humidity: humidity, light: light, air_quality: air_quality,  noise: noise};
     }
     
     this.on("payload", (err, payload) => {
