@@ -305,7 +305,11 @@ device.prototype.auth = function() {
 device.prototype.exit = function() {
     var self = this;
     setTimeout(function() {
-        self.cs.close();
+        try {
+            self.cs.close();
+        } catch (e) {
+            // avoid Error('Not running')
+        }
     }, 500);
 }
 
